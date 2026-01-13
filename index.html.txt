@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traverling | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header" id="top">
+    <nav class="navbar container">
+      <a href="#top" class="logo">Traverling</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-extra">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <div class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content container">
+      <h1 class="hero-title">Hi, I'm <span class="accent">Traverling</span></h1>
+      <p class="hero-tag">Building modern, responsive websites</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I'm a passionate front-end developer who loves turning ideas into interactive realities.
+        With expertise in HTML, CSS, and JavaScript, I craft clean, performant, and accessible
+        web experiences that users enjoy and clients are proud of.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <!-- Skill -->
+        <div class="skill">
+          <div class="skill-header">
+            <span>HTML5</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-header">
+            <span>CSS3</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-header">
+            <span>JavaScript</span>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-header">
+            <span>Git</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-header">
+            <span>Responsive Design</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="95"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Project Card -->
+        <article class="project-card">
+          <img src="assets/images/proj1.jpg" alt="Project 1" class="project-img">
+          <div class="project-info">
+            <h3>Travel Landing Page</h3>
+            <p>Modern, responsive travel website built with semantic HTML, CSS Grid & Flexbox.</p>
+            <div class="tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="btn-text">Demo</a>
+              <a href="#" target="_blank" class="btn-text">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/images/proj2.jpg" alt="Project 2" class="project-img">
+          <div class="project-info">
+            <h3>Task Manager App</h3>
+            <p>Interactive to-do application with local-storage and dark-mode support.</p>
+            <div class="tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="btn-text">Demo</a>
+              <a href="#" target="_blank" class="btn-text">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/images/proj3.jpg" alt="Project 3" class="project-img">
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio showcasing projects, skills, and contact form validation.</p>
+            <div class="tech">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="btn-text">Demo</a>
+              <a href="#" target="_blank" class="btn-text">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services section">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>Web Design</h3>
+          <p>Clean, modern designs focused on usability and accessibility.</p>
+        </article>
+        <article class="service-card">
+          <h3>Front-End Development</h3>
+          <p>Responsive, performant, and pixel-perfect code using latest standards.</p>
+        </article>
+        <article class="service-card">
+          <h3>Website Optimization</h3>
+          <p>Speed, SEO, and accessibility improvements for better user experience.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required></textarea>
+          <small class="error"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-wrapper">
+      <div class="socials">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+      <p>&copy; <span id="year"></span> Traverling. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

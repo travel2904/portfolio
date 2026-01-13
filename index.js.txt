@@ -1,0 +1,93 @@
+/* ===============  HELPER UTILS  =============== */
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+/* ===============  MOBILE NAV  =============== */
+const hamburger = $('#hamburger');
+const navLinks = $('#navLinks');
+
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+/* Close nav when link clicked (mobile) */
+$$('.nav-links a').forEach(link =>
+  link.addEventListener('click', () => navLinks.classList.remove('open'))
+);
+
+/* ===============  THEME TOGGLE  =============== */
+const themeBtn = $('#themeToggle');
+const html = document.documentElement;
+
+// Check for saved theme or default to light
+const currentTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', currentTheme);
+themeBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+themeBtn.addEventListener('click', () => {
+  const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  themeBtn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+});
+
+/* ===============  SKILL BARS ANIMATION  =============== */
+const observerOptions = { threshold: 0.5 };
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const bars = $$('.skill-progress', entry.target);
+    bars.forEach(bar => {
+      const width = bar.dataset.width;
+      bar.style.width = width + '%';
+    });
+    skillObserver.unobserve(entry.target);
+  });
+}, observerOptions);
+
+const skillsSection = $('#skills');
+if (skillsSection) skillObserver.observe(skillsSection);
+
+/* ===============  CONTACT FORM VALIDATION  =============== */
+const form = $('#contactForm');
+const formStatus = $('#formStatus');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Reset previous errors
+  $$('.form-group').forEach(g => g.classList.remove('error'));
+  formStatus.textContent = '';
+
+  let valid = true;
+
+  // Validate each field
+  const fields = ['name', 'email', 'message'];
+  fields.forEach(name => {
+    const input = $(`#${name}`);
+    const group = input.closest('.form-group');
+    const error = $('.error', group);
+
+    if (!input.value.trim()) {
+      group.classList.add('error');
+      error.textContent = `${name.charAt(0).toUpperCase() + name.slice(1)} is required.`;
+      valid = false;
+    } else if (name === 'email' && !/^\S+@\S+\.\S+$/.test(input.value.trim())) {
+      group.classList.add('error');
+      error.textContent = 'Please enter a valid email address.';
+      valid = false;
+    }
+  });
+
+  if (valid) {
+    // Simulate sending
+    formStatus.textContent = 'Sending...';
+    formStatus.style.color = 'var(--clr-primary)';
+    setTimeout(() => {
+      formStatus.textContent = 'Message sent successfully!';
+      formStatus.style.color = 'green';
+      form.reset();
+    }, 800);
+  }
+});
+
+/* ===============  DYNAMIC YEAR  =============== */
+$('#year').textContent = new Date().getFullYear();
